@@ -1,0 +1,13 @@
+version: '3'  # version of compose format
+
+services:
+  jupyter-notebook:
+    build:
+      context: ""  # path is relative to docker-compose.yml location
+      args:
+        - JUPYTER_ENABLE_LAB="yes"
+    volumes:
+      - .:/home/jovyan/work # mount point
+    ports:
+      - 8888:8888  # host:container
+    container_name: datascience-notebook-container
